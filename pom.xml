@@ -7,15 +7,18 @@
     <version>${revision}</version>
     <packaging>pom</packaging>
 
+    <name>Maven Archetypes</name>
+    <description>Collection of Maven archetypes to assist java developers in quickly bootstrapping new projects</description>
+
     <modules>
         <module>empty-spring-boot</module>
     </modules>
 
     <scm child.scm.connection.inherit.append.path="false" child.scm.developerConnection.inherit.append.path="false" child.scm.url.inherit.append.path="false">
-        <connection>scm:git:git@github.com/ehayik/archetypes.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com/ehayik/archetypes.git</developerConnection>
+        <connection>scm:git:git@github.com/ehayik/maven-archetypes.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/ehayik/maven-archetypes.git</developerConnection>
         <tag>HEAD</tag>
-        <url>https://github.com/ehayik/archetypes/</url>
+        <url>https://github.com/ehayik/maven-archetypes/</url>
     </scm>
 
     <properties>
