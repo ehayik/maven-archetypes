@@ -10,6 +10,24 @@
     <name>Maven Archetypes</name>
     <description>Collection of Maven archetypes to assist java developers in quickly bootstrapping new projects</description>
 
+    <url>https://github.com/ehayik/maven-archetypes</url>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://opensource.org/licenses/MIT</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>ehayik</id>
+            <name>Eduardo Eljaiek</name>
+            <email>eduardo.eljaiek@gmail.com</email>
+        </developer>
+    </developers>
+
     <modules>
         <module>empty-spring-boot</module>
     </modules>
@@ -22,11 +40,13 @@
     </scm>
 
     <properties>
-        <revision>1.0</revision>
+        <revision>1.0.0</revision>
         <skipTests>false</skipTests>
+        <flatten.mode>clean</flatten.mode>
         <archetype.version>3.2.1</archetype.version>
         <spotless-maven-plugin.version>2.43.0</spotless-maven-plugin.version>
         <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
+        <flatten-maven-plugin.version>1.6.0</flatten-maven-plugin.version>
     </properties>
 
     <build>
@@ -39,6 +59,39 @@
                     <configuration>
                         <skip>${skipTests}</skip>
                     </configuration>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>integration-test</goal>
+                            </goals>
+                            <phase>package</phase>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>flatten-maven-plugin</artifactId>
+                    <version>${flatten-maven-plugin.version}</version>
+                    <configuration>
+                        <updatePomFile>true</updatePomFile>
+                        <flattenMode>${flatten.mode}</flattenMode>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>flatten</id>
+                            <goals>
+                                <goal>flatten</goal>
+                            </goals>
+                            <phase>process-resources</phase>
+                        </execution>
+                        <execution>
+                            <id>flatten.clean</id>
+                            <goals>
+                                <goal>clean</goal>
+                            </goals>
+                            <phase>clean</phase>
+                        </execution>
+                    </executions>
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -54,11 +107,11 @@
                             <nrOfIndentSpace>4</nrOfIndentSpace>
                             <sortPlugins>groupId,artifactId</sortPlugins>
                             <expandEmptyElements>false</expandEmptyElements>
+                            <keepBlankLines>true</keepBlankLines>
                         </sortPom>
                     </pom>
                 </configuration>
             </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
@@ -83,6 +136,10 @@
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>flatten-maven-plugin</artifactId>
             </plugin>
         </plugins>
     </build>
