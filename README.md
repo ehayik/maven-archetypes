@@ -30,14 +30,23 @@ mvn archetype:generate -B \
 
 ## Development
 
-To create a new archetype, file a pull request creating a new `module`, following the examples currently here. Important pieces:
+### Contributing a New Archetype
 
-- `pom.xml` must have `<packaging>maven-archetype</packaging>` 
-- should also have a `<description>`
-- `src/main/resources/META-INF/maven/archetype-metadata.xml`: defines files and directories to be copied & processed
-- `src/main/resources/archetype-resources/`: the template for the new component (remember a sample .gitignore)
-- `src/test/resources/projects/testInstall/{goal.txt,archetype.properties}`: defines an integration test, proving that
-   the archetype can not just be instantiated, but builds successfully thereafter
+1. File a pull request creating a new module.
+2. Update, modify, or create following files in your module:
+     
+- `pom.xml`: This file must include `<packaging>maven-archetype</packaging>` and a `<description>` of what your archetype does.
+- `src/main/resources/META-INF/maven/archetype-metadata.xml`: This file should define the files and directories that
+   will be copied and processed.
+- `src/main/resources/archetype-resources/`: This directory should contain the template for your new component. Don't
+   forget to include a sample .gitignore file!
+- `src/test/resources/projects/testInstall/{goal.txt,archetype.properties}`: Here, define an integration test that not
+only proves that your archetype can be instantiated but also build successfully.
+
+The structure of your module should follow the existing modules as a guide. Be sure to review those before submitting 
+your pull request!
+
+Remember to follow these guidelines, and feel free to ask if you have any questions or need further clarifications.
 
 ## Credits
 
