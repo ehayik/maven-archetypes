@@ -13,7 +13,7 @@
     <artifactId>${artifactId}</artifactId>
     <version>${version}</version>
 
-    <description>Empty Spring Boot application with sensible defaults and Java SDK version ${javaVersion}</description>
+    <description>Spring Boot application with sensible defaults for Lombok, code formatting, testing, and error detection</description>
 
     <licenses>
         <license>
