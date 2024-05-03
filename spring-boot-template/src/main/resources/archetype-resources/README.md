@@ -28,7 +28,7 @@ Before you continue, please ensure you have met the following requirements:
 - You have a basic understanding of Java, and Spring Boot.
 - You have installed an IDE that supports Java and Spring Boot applications development, such as IntelliJ IDEA
 
-### Installing Depedencies
+### Installing Dependencies
 
 1. Open the project folder.
 2. Run `mvn clean compile` to install the necessary dependencies from the POM file.
