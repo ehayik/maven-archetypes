@@ -21,12 +21,23 @@ It is also possible to run this non-interactively:
 mvn archetype:generate -B \
     -DarchetypeGroupId=org.github.ehayik.archetypes \
     -DarchetypeVersion=1.0.0 \
-    -DarchetypeArtifactId=empty-spring-boot \
+    -DarchetypeArtifactId=spring-boot-template \
     -DgroupId=your.app.group \
     -DartifactId=cool-app \
     -Dauthor="Copyright Holder" \
     -DinteractiveMode=false 
 ```
+
+## Development
+
+To create a new archetype, file a pull request creating a new `module`, following the examples currently here. Important pieces:
+
+- `pom.xml` must have `<packaging>maven-archetype</packaging>` 
+- should also have a `<description>`
+- `src/main/resources/META-INF/maven/archetype-metadata.xml`: defines files and directories to be copied & processed
+- `src/main/resources/archetype-resources/`: the template for the new component (remember a sample .gitignore)
+- `src/test/resources/projects/testInstall/{goal.txt,archetype.properties}`: defines an integration test, proving that
+   the archetype can not just be instantiated, but builds successfully thereafter
 
 ## Credits
 
@@ -34,5 +45,4 @@ I learned a lot from the projects and resources listed below:
 
 - [Baeldung's Guide to Maven Archetype](https://www.baeldung.com/maven-archetype)
 - [Jenkins CI archetypes repository](https://github.com/jenkinsci/archetypes)
-- 
   
