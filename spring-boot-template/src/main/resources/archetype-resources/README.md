@@ -61,6 +61,23 @@ These commands can either be run in the terminal or in the IntelliJ "Run Anythin
 We strongly recommend running these tests as you develop and not just before the commit, as this might help catch issues
 early on.
 
+#### Aggregated Unit, Integration & System Tests Coverage Report
+
+In the context of this project, the [JaCoCo plugin](https://www.jacoco.org/jacoco/trunk/doc/maven.html) is configured to
+automatically generate unit, integration & system test coverage reports whenever the tests are run. This means you don't
+need to execute any additional commands to create these reports. The reports are saved with the following names:
+
+- **Unit tests:** jacoco-unit-tests
+- **Integration & System tests:** jacoco-integration-tests
+- **Merged Report:**: merged
+
+Furhtermore, These reports can be found in your project's target directory (for example, `target/site/jacoco`) after
+running the tests. You can open them with any web browser to view the test coverage in detail.
+
+Addtionally, for those who are interested in a more in-depth understanding of how to report aggregated unit and integration
+test coverage with JaCoCo, you might find this [article](https://natritmeyer.com/howto/reporting-aggregated-unit-and-integration-test-coverage-with-jacoco/)
+useful. It's not a requirement but a recommended read for a deeper comprehension.
+
 ### Code Formatting
 
 The project follows the automatic code formatting approach to reduce 'nit' comments in code reviews, allowing engineers to
