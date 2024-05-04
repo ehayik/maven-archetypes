@@ -92,16 +92,6 @@
                             <expandEmptyElements>false</expandEmptyElements>
                         </sortPom>
                     </pom>
-                    <yaml>
-                        <includes>
-                            <include>src/**/*.yml</include>
-                        </includes>
-                        <jackson>
-                            <yamlFeatures>
-                                <MINIMIZE_QUOTES>true</MINIMIZE_QUOTES>
-                            </yamlFeatures>
-                        </jackson>
-                    </yaml>
                 </configuration>
             </plugin>
 
