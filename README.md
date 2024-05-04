@@ -54,4 +54,5 @@ I learned a lot from the projects and resources listed below:
 
 - [Baeldung's Guide to Maven Archetype](https://www.baeldung.com/maven-archetype)
 - [Jenkins CI archetypes repository](https://github.com/jenkinsci/archetypes)
+- [Maven Setup For Testing Java Applications](https://rieckpil.de/maven-setup-for-testing-java-applications/)
   

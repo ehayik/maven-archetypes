@@ -25,6 +25,9 @@
 
     <properties>
         <java.version>${javaVersion}</java.version>
+        <maven.test.skip>false</maven.test.skip>
+        <integration-test.skip>false</integration-test.skip>
+        <system-test.skip>false</system-test.skip>
         <spotless-maven-plugin.version>2.43.0</spotless-maven-plugin.version>
         <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
         <error.prone.version>2.27.0</error.prone.version>
@@ -126,6 +129,50 @@
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <executions>
+                    <!--disables default execution to not run tests twice-->
+                    <execution>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                        <configuration>
+                            <skipTests>true</skipTests>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>integration-test</id>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                        <configuration>
+                            <skipTests>${integration-test.skip}</skipTests>
+                            <includes>
+                                <include>**/*IT</include>
+                            </includes>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>system-test</id>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                        <configuration>
+                            <skipTests>${system-test.skip}</skipTests>
+                            <includes>
+                                <include>**/*SystemTest</include>
+                                <include>**/*SystemTests</include>
+                            </includes>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
                 <version>${maven-resources-plugin.version}</version>
                 <executions>
@@ -148,6 +195,17 @@
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>**/*SystemTest</exclude>
+                        <exclude>**/*SystemTests</exclude>
+                    </excludes>
+                </configuration>
             </plugin>
 
             <plugin>

@@ -1,0 +1,12 @@
+---
+app:
+  message: Hello World!
+
+# Uncomment the following code to debug why your current test isn't reusing an already started Spring Application Context.
+#logging:
+#  level:
+#    org:
+#      springframework:
+#        test:
+#          context:
+#              cache: DEBUG

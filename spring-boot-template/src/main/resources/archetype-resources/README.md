@@ -37,6 +37,30 @@ Before you continue, please ensure you have met the following requirements:
 
 1. Run `mvn spring-boot:run`
 
+### Testing
+
+In our application, we use different types of tests to ensure code quality:
+
+- Unit tests for testing individual components in isolation.
+- Integration tests for testing the interaction between components.
+- System tests for testing the application as a whole, in an environment that mimics production.
+
+Here's how you can run them:
+
+- **All Tests (Unit, Integration & System tests):** Use the command `mvn verify`.
+- **Unit Tests only:** Use the command `mvn verify -DskipITs`.
+- **To skip Integration tests:** Use the command `mvn verify -Dintegration-test.skip=true`.
+- **To skip System tests:** Use the command `mvn verify -Dsystem-test.skip=true`.
+
+These commands can either be run in the terminal or in the IntelliJ "Run Anything" dialog (accessed by pressing `Ctrl` twice).
+
+>**NOTE**:
+> Typically, integration & system tests take more time to run so you might want to exclude them during development and
+> run only before checking in the code.
+
+We strongly recommend running these tests as you develop and not just before the commit, as this might help catch issues
+early on.
+
 ### Code Formatting
 
 The project follows the automatic code formatting approach to reduce 'nit' comments in code reviews, allowing engineers to
