@@ -67,9 +67,9 @@ In the context of this project, the [JaCoCo plugin](https://www.jacoco.org/jacoc
 automatically generate unit, integration & system test coverage reports whenever the tests are run. This means you don't
 need to execute any additional commands to create these reports. The reports are saved with the following names:
 
-- **Unit tests:** jacoco-unit-tests
-- **Integration & System tests:** jacoco-integration-tests
-- **Merged Report:**: merged
+- **Unit tests:** `jacoco-unit-tests`
+- **Integration & System tests:** `jacoco-integration-tests`
+- **Merged Report:** `merged`
 
 Furhtermore, These reports can be found in your project's target directory (for example, `target/site/jacoco`) after
 running the tests. You can open them with any web browser to view the test coverage in detail.
