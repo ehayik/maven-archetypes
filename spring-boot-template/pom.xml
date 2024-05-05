@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.github.ehayik.archetypes</groupId>
+        <groupId>io.github.ehayik.archetypes</groupId>
         <artifactId>archetypes-parent</artifactId>
         <version>${revision}</version>
     </parent>

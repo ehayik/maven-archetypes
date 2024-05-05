@@ -23,14 +23,14 @@ Prerequisites:
 To see all currently released archetypes and pick one to instantiate:
 
 ```shell
-mvn archetype:generate -Dfilter=org.github.ehayik.archetypes:
+mvn archetype:generate -Dfilter=io.github.ehayik.archetypes:
 ```
 
 It is also possible to run this non-interactively:
 
 ```shell
 mvn archetype:generate -B \
-    -DarchetypeGroupId=org.github.ehayik.archetypes \
+    -DarchetypeGroupId=io.github.ehayik.archetypes \
     -DarchetypeVersion=1.0.0 \
     -DarchetypeArtifactId=spring-boot-template \
     -DgroupId=your.app.group \
