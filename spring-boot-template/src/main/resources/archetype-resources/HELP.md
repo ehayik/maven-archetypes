@@ -74,11 +74,18 @@ Now, let's look at how to install dependencies, run the application, and conduct
 
 ### Testing
 
-In our application, we use different types of tests to ensure code quality:
+The generated project adheres to the [Test Pyramid](https://martinfowler.com/bliki/TestPyramid.html) strategy for ensuring
+code quality, encompassing three levels from lower to higher as follows:
 
-- Unit tests for testing individual components in isolation.
-- Integration tests for testing the interaction between components.
-- System tests for testing the application as a whole, in an environment that mimics production.
+1. Unit tests for testing individual components in isolation.
+2. Integration tests for testing the interaction between components.
+3. System tests for testing the application as a whole, in an environment that mimics production.
+
+Its essential point is that you should have many more low-level tests than high level tests running.
+
+> The test pyramid is a way of thinking about how different kinds of automated tests should be used to create a balanced
+> portfolio.
+> ~ Martin Fowler
 
 Here's how you can run them:
 
@@ -95,6 +102,14 @@ These commands can either be run in the terminal or in the IntelliJ "Run Anythin
 
 We strongly recommend running these tests as you develop and not just before the commit, as this might help catch issues
 early on.
+
+When it comes to testing using Maven for Java applications, both the `test` and `verify` build phases are of importance. 
+As part of the`test` phase, we're running our unit tests with the [Maven Surefire Plugin](https://maven.apache.org/surefire/maven-surefire-plugin/),
+and with `verify` our integration & system tests are executed by the [Maven Failsafe Plugin](https://maven.apache.org/surefire/maven-failsafe-plugin/index.html).
+
+For a more comprehensive understanding of establishing the testing environment, I recommend reading
+[Maven Setup For Testing Java Applications](https://rieckpil.de/maven-setup-for-testing-java-applications/). It provides
+valuable insights into setting up and managing the testing framework using Maven for Java applications.
 
 Additionally, for a deep dive into testing with Spring Boot Starter Test, consider reading the
 [Guide to Testing With the Spring Boot Starter Test](https://rieckpil.de/guide-to-testing-with-spring-boot-starter-test). 
