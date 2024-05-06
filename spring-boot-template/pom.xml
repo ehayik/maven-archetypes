@@ -13,6 +13,7 @@
 
     <name>Spring Boot Template</name>
     <description>A robust skeleton for Spring Boot applications, with sensible defaults for Lombok, code formatting, testing, and error detection.</description>
+    <url>https://github.com/ehayik/maven-archetypes</url>
 
     <build>
         <plugins>
