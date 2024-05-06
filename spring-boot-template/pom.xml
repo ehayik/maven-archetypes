@@ -10,13 +10,9 @@
 
     <artifactId>spring-boot-template</artifactId>
     <packaging>maven-archetype</packaging>
+
     <name>Spring Boot Template</name>
-
     <description>A robust skeleton for Spring Boot applications, with sensible defaults for Lombok, code formatting, testing, and error detection.</description>
-
-    <properties>
-        <flatten.mode>oss</flatten.mode>
-    </properties>
 
     <build>
         <plugins>

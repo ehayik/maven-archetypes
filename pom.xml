@@ -9,20 +9,17 @@
 
     <name>Maven Archetypes</name>
     <description>Collection of Maven archetypes to assist java developers in quickly bootstrapping new projects</description>
-
     <url>https://github.com/ehayik/maven-archetypes</url>
 
     <licenses>
         <license>
             <name>MIT License</name>
-            <url>https://opensource.org/licenses/MIT</url>
-            <distribution>repo</distribution>
+            <url>https://www.opensource.org/licenses/mit-license.php</url>
         </license>
     </licenses>
 
     <developers>
         <developer>
-            <id>ehayik</id>
             <name>Eduardo Eljaiek</name>
             <email>eduardo.eljaiek@gmail.com</email>
             <organization>EduardoEljaiek</organization>
@@ -35,10 +32,9 @@
     </modules>
 
     <scm child.scm.connection.inherit.append.path="false" child.scm.developerConnection.inherit.append.path="false" child.scm.url.inherit.append.path="false">
-        <connection>scm:git:git@github.com/ehayik/maven-archetypes.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com/ehayik/maven-archetypes.git</developerConnection>
-        <tag>HEAD</tag>
-        <url>https://github.com/ehayik/maven-archetypes/</url>
+        <connection>scm:git:git://github.com/ehayik/maven-archetypes.git</connection>
+        <developerConnection>scm:git:ssh://github.com:ehayik/maven-archetypes.git</developerConnection>
+        <url>https://github.com/ehayik/maven-archetypes/tree/master</url>
     </scm>
 
     <issueManagement>
@@ -60,15 +56,15 @@
     <properties>
         <revision>1.0.0</revision>
         <skipTests>false</skipTests>
-        <flatten.mode>clean</flatten.mode>
+        <flatten.mode>ossrh</flatten.mode>
         <archetype.version>3.2.1</archetype.version>
         <spotless-maven-plugin.version>2.43.0</spotless-maven-plugin.version>
         <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
         <flatten-maven-plugin.version>1.6.0</flatten-maven-plugin.version>
-        <nexus-staging-maven-plugin.version>1.6.13</nexus-staging-maven-plugin.version>
         <maven-source-plugin.version>3.3.1</maven-source-plugin.version>
         <maven-javadoc-plugin.version>3.6.3</maven-javadoc-plugin.version>
         <maven-gpg-plugin.version>3.2.4</maven-gpg-plugin.version>
+        <central-publishing-maven-plugin.version>0.4.0</central-publishing-maven-plugin.version>
     </properties>
 
     <build>
@@ -213,14 +209,14 @@
                         </executions>
                     </plugin>
                     <plugin>
-                        <groupId>org.sonatype.plugins</groupId>
-                        <artifactId>nexus-staging-maven-plugin</artifactId>
-                        <version>${nexus-staging-maven-plugin.version}</version>
+                        <groupId>org.sonatype.central</groupId>
+                        <artifactId>central-publishing-maven-plugin</artifactId>
+                        <version>${central-publishing-maven-plugin.version}</version>
                         <extensions>true</extensions>
                         <configuration>
-                            <serverId>ossrh</serverId>
-                            <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
-                            <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                            <publishingServerId>central</publishingServerId>
+                            <tokenAuth>true</tokenAuth>
+                            <autoPublish>true</autoPublish>
                         </configuration>
                     </plugin>
                 </plugins>
