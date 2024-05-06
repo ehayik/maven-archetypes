@@ -54,8 +54,8 @@ prevent common pitfalls. Refer to the [documentation](./spring-boot-template/src
 This archetype is designed to boost your productivity and enhance code quality in Spring Boot-based projects. It contains
 the following files/dependencies:
 
-- Java 21 (use `-DjavaVersion` to switch to Java 17 or a higher version than 21)
-- Spring Boot 3.2.5 (use `-DspringBootVersion` to switch to a higher version)
+- Java 21, use `-DjavaVersion` to switch to Java 17 or a higher version than 21
+- Spring Boot 3.2.5, use `-DspringBootVersion` to switch to a higher version
 - Spring Boot Devtools dependency to provide additional development-time features
 - Spring Boot Starter Test dependency for a solid testing infrastructure
 - Lombok dependency to write less boilerplate code
