@@ -64,7 +64,7 @@ the following files/dependencies:
 - A `lombok.config` file with useful defaults
 - A basic `README.md` file
 - A basic `.gitignore`
-- A MIT `LICENSE.md` file
+- A MIT `LICENSE.md` file, use `-Dauthor` to set the author's name
 - Spring Boot application `Application.java`
 - A basic Unit test `ApplicationTest.java`
 - A basic Integration test `ApplicationIT.java`
