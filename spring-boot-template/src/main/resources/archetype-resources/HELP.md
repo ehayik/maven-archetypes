@@ -107,6 +107,13 @@ When it comes to testing using Maven for Java applications, both the `test` and 
 As part of the`test` phase, we're running our unit tests with the [Maven Surefire Plugin](https://maven.apache.org/surefire/maven-surefire-plugin/),
 and with `verify` our integration & system tests are executed by the [Maven Failsafe Plugin](https://maven.apache.org/surefire/maven-failsafe-plugin/index.html).
 
+The suggestion to use unit, integration, and system tests are guidelines designed based on best practices in industry.
+They provide a convenient and robust way to ensure the reliability and correctness of your codebase
+
+However, the developer or team is always free to define the testing levels that they find most relevant and beneficial
+to the project or the organization's policies. The methods to run and skip specific tests, given in the document, would
+remain valid, exhibiting how to achieve this using Maven.
+
 For a more comprehensive understanding of establishing the testing environment, I recommend reading
 [Maven Setup For Testing Java Applications](https://rieckpil.de/maven-setup-for-testing-java-applications/). It provides
 valuable insights into setting up and managing the testing framework using Maven for Java applications.
@@ -115,7 +122,7 @@ Additionally, for a deep dive into testing with Spring Boot Starter Test, consid
 [Guide to Testing With the Spring Boot Starter Test](https://rieckpil.de/guide-to-testing-with-spring-boot-starter-test). 
 The guide offers comprehensive information and practical examples about testing in a Spring Boot application.
 
-#### Aggregated Unit, Integration & System Tests Coverage Report
+##### Aggregated Unit, Integration & System Tests Coverage Report
 
 In the context of this project, the [JaCoCo plugin](https://www.jacoco.org/jacoco/trunk/doc/maven.html) is configured to
 automatically generate unit, integration & system test coverage reports whenever the tests are run. This means you don't
@@ -125,10 +132,10 @@ need to execute any additional commands to create these reports. The reports are
 - **Integration & System tests:** `jacoco-integration-tests`
 - **Merged Report:** `merged`
 
-Furhtermore, These reports can be found in your project's target directory (for example, `target/site/jacoco`) after
+Furthermore, These reports can be found in your project's target directory (for example, `target/site/jacoco`) after
 running the tests. You can open them with any web browser to view the test coverage in detail.
 
-Addtionally, for those who are interested in a more in-depth understanding of how to report aggregated unit and integration
+Additionally, for those who are interested in a more in-depth understanding of how to report aggregated unit and integration
 test coverage with JaCoCo, you might find this [article](https://natritmeyer.com/howto/reporting-aggregated-unit-and-integration-test-coverage-with-jacoco/)
 useful. It's not a requirement but a recommended read for a deeper comprehension.
 
