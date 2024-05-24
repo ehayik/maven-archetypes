@@ -54,7 +54,7 @@
     </distributionManagement>
 
     <properties>
-        <revision>1.0.0</revision>
+        <revision>1.0.1</revision>
         <skipTests>false</skipTests>
         <flatten.mode>ossrh</flatten.mode>
         <archetype.version>3.2.1</archetype.version>

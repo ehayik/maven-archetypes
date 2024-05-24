@@ -8,7 +8,7 @@
     <requiredProperties>
         <requiredProperty key="author"/>
         <requiredProperty key="springBootVersion">
-            <defaultValue>3.2.5</defaultValue>
+            <defaultValue>3.3.0</defaultValue>
             <validationRegex><![CDATA[^[0-9]+(\.[0-9]+)+$]]></validationRegex>
         </requiredProperty>
         <requiredProperty key="javaVersion">
